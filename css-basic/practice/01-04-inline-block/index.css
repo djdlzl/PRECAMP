@@ -1,0 +1,15 @@
+.block-container {
+  border: 3px solid blue;
+}
+.block-container div {
+  border: 3px solid green;
+  display: inline;
+}
+
+.inline-container {
+  border: 3px solid red;
+}
+.inline-container span {
+  background-color: yellow;
+  display: block;
+}

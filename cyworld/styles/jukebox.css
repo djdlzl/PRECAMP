@@ -84,11 +84,54 @@ body {
   align-items: center;
 }
 
+.table__header {
+  width: 464px;
+  height: 20px;
+  flex-shrink: 0;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table__header__line {
+  border: 1px solid #999;
+  width: 464px;
+}
+
+.table__checkbox {
+}
+
+.table__header__text {
+  font-size: 10px;
+  font-weight: 700;
+  color: #999;
+}
+
+.table__body {
+  width: 464px;
+  height: 20px;
+}
+
+.table__body__line {
+  border: 1px dotted #999;
+}
+/* 
 table {
   width: 100%;
   text-align: left;
 }
 
+th {
+  font-size: 10px;
+  font-weight: 700;
+  color: #999;
+}
+
+thead {
+  background-color: #eee;
+}
 .no {
   text-align: center;
-}
+} */

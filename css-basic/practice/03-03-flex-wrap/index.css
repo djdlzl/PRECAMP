@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 600px;
+  height: 500px;
+  padding: 10px;
+  background-color: #eeeeee;
+  border: 2px solid red;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container div {
+  /* background-color: blue; */
+  margin: 5px;
+  width: 200px;
+  font-family: "Grandiflora One", cursive;
+}
+/* order를 넣지 않으면 기본적으로 0, 배치순서를 나타냄 */
+.box4 {
+  order: 3;
+}
+.box5 {
+  order: 0;
+}

@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 600px;
+  height: 120px;
+  background-image: linear-gradient(to top, orange, red);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.box span {
+  font-size: 36px;
+  color: white;
+  font-weight: 600;
+    transition: transform 0.4s ease-in-out;
+}
+
+.box #text1 {
+}
+
+.box:hover span {
+  transform: translateY(-20px);
+}

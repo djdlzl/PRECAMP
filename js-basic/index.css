@@ -19,3 +19,8 @@ body {
 .target-input {
   width: 80px;
 }
+
+.d-day-child-container {
+  font-size: medium;
+  font-weight: 700;
+}

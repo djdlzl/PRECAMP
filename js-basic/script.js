@@ -1,7 +1,7 @@
 const messageContainer = document.getElementById("d-day-message");
 const container = document.getElementById("d-day-container");
 
-// container.style.display = "none";
+container.style.display = "none";
 messageContainer.innerHTML = "<h3>D-Day를 입력해주세요.</h3>";
 
 const dateFormMaker = function () {
@@ -24,9 +24,13 @@ const countMaker = function () {
   if (remaining <= 0) {
     console.log("타이머가 종료 되었습니다.");
     messageContainer.innerHTML = "<h3>타이머가 종료되었습니다.</h3>";
+    return;
   } else if (isNaN(remaining)) {
     console.log("유효한 시간대가 아닙니다.");
+    container.style.display = "none";
     messageContainer.innerHTML = "<h3>유효한 시간대가 아닙니다.</h3>";
+    messageContainer.style.display = "flex";
+    return;
   }
   // 만약, 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력
   //   const remainingDate = Math.floor(remaining / 3600 / 24);
@@ -45,26 +49,29 @@ const countMaker = function () {
   //   const hours = document.getElementById("hours");
   //   const min = document.getElementById("minutes");
   //   const sec = document.getElementById("seconds");
-
-  const documentObj = {
-    days: document.getElementById("days"),
-    hours: document.getElementById("hours"),
-    min: document.getElementById("minutes"),
-    sec: document.getElementById("seconds"),
-  };
-
+  const documentArr = ["days", "hours", "minutes", "seconds"];
   const timeKeys = Object.keys(remainingObj);
-  const docKeys = Object.keys(documentObj);
 
-  for (let i = 0; i < timeKeys.length; i++) {
-    documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
+  let i = 0;
+  for (let tag of documentArr) {
+    document.getElementById(tag).textContent = remainingObj[timeKeys[i]];
+    i++;
   }
 
-  //   documentObj["days"].textContent = remainingObj["remainingDate"];
-  //   documentObj["hours"].textContent = remainingObj["remainingHour"];
-  //   documentObj["min"].textContent = remainingObj["remainingMinute"];
-  //   documentObj["sec"].textContent = remainingObj["remainingSecond"];
-  for (let i = 0; i < docKeys.length; i++) {
-    console.log(documentObj[docKeys[i]]);
+  //   const documentObj = {
+  //     days: document.getElementById("days"),
+  //     hours: document.getElementById("hours"),
+  //     min: document.getElementById("minutes"),
+  //     sec: document.getElementById("seconds"),
+  //   };
+};
+
+const starter = function () {
+  container.style.display = "flex";
+  messageContainer.style.display = "none";
+  for (let i = 0; i < 100; i++) {
+    setTimeout(() => {
+      countMaker();
+    }, 1000 * i);
   }
 };

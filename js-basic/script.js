@@ -69,9 +69,6 @@ const countMaker = function () {
 const starter = function () {
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  for (let i = 0; i < 100; i++) {
-    setTimeout(() => {
-      countMaker();
-    }, 1000 * i);
-  }
+  countMaker();
+  setInterval(countMaker, 1000);
 };
